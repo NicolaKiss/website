@@ -1,5 +1,147 @@
-body {
-    background: black;
-    color: white;
-    text-align: center;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#111;
+    color:white;
+    font-family:Arial,sans-serif;
+    overflow:hidden;
+}
+
+/* TOP TOOLBAR */
+
+.toolbar{
+
+    height:70px;
+
+    background:#1b1b1b;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:15px;
+
+    border-bottom:1px solid #333;
+}
+
+button,input{
+
+    padding:10px 15px;
+
+    border:none;
+
+    border-radius:8px;
+}
+
+button{
+
+    background:#2d2d2d;
+
+    color:white;
+
+    cursor:pointer;
+}
+
+button:hover{
+
+    background:#444;
+}
+
+/* PDF CONTAINER */
+
+#pdf-container{
+
+    height:calc(100vh - 70px);
+
+    display:flex;
+
+    flex-direction:row;
+
+    align-items:flex-start;
+
+    gap:40px;
+
+    padding:40px;
+
+    overflow-x:auto;
+
+    overflow-y:hidden;
+
+    scroll-behavior:smooth;
+}
+
+/* PAGE */
+
+.page{
+
+    background:white;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    flex-shrink:0;
+
+    box-shadow:
+        0 0 25px rgba(0,0,0,0.4),
+        0 15px 40px rgba(0,0,0,0.35);
+
+    transition:0.2s;
+}
+
+.page:hover{
+
+    transform:translateY(-4px);
+}
+
+canvas{
+
+    display:block;
+}
+
+/* PAGE NUMBER */
+
+.page-number{
+
+    padding:10px;
+
+    text-align:center;
+
+    background:#f1f1f1;
+
+    color:#111;
+
+    font-size:14px;
+
+    border-top:1px solid #ddd;
+}
+
+/* SCROLLBAR */
+
+#pdf-container::-webkit-scrollbar{
+
+    height:12px;
+}
+
+#pdf-container::-webkit-scrollbar-track{
+
+    background:#1a1a1a;
+}
+
+#pdf-container::-webkit-scrollbar-thumb{
+
+    background:#555;
+
+    border-radius:20px;
+}
+
+#pdf-container::-webkit-scrollbar-thumb:hover{
+
+    background:#777;
 }
